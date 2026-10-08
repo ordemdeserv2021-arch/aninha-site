@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aninha PDV - Sistema de Caixa & Gestão de Estoque</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
+    .gradient-dark { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 gradient-bg text-white font-bold text-xl flex items-center justify-center rounded-xl shadow-md">
+          A
+        </div>
+        <div>
+          <span class="font-extrabold text-slate-900 text-lg tracking-tight">Aninha<span class="text-emerald-600">PDV</span></span>
+          <span class="hidden sm:inline-block text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-medium ml-2">Sistema + Impressora</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex items-center gap-2 bg-slate-100 p-1 rounded-xl">
+        <button onclick="switchTab('landing')" id="tab-landing" class="px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-lg bg-white shadow-sm text-emerald-700 transition">
+          <i class="fa-solid fa-globe mr-1"></i> Site Oficial
+        </button>
+        <button onclick="switchTab('banner')" id="tab-banner" class="px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition">
+          <i class="fa-solid fa-circle-info mr-1"></i> Clique e saiba mais
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- TAB 1: LANDING PAGE DO SITE -->
+  <main id="section-landing" class="block">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+              <i class="fa-solid fa-print"></i> Kit Completo: Software + Impressora Térmica
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+              Sua loja organizada, seu caixa sem filas.
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg max-w-xl">
+              Alugue o sistema **Aninha PDV** com **impressora térmica inclusa**. Controle estoque, faça vendas rápidas no PIX, cartão ou dinheiro e emita comprovantes em segundos.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+              <a href="https://wa.me/5521982260442?text=Olá!%20Tenho%20interesse%20em%20alugar%20o%20Aninha%20PDV%20com%20Impressora%20Térmica." target="_blank" class="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 transition">
+                <i class="fa-brands fa-whatsapp text-xl"></i> Solicitar Demonstração
+              </a>
+              <a href="#planos" class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold rounded-xl flex items-center justify-center gap-2 transition">
+                Ver Conhecer o Aluguel
+              </a>
+            </div>
+            <div class="pt-4 flex items-center justify-center lg:justify-start gap-6 text-slate-400 text-xs">
+              <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Instalação Descomplicada</span>
+              <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Suporte Técnico</span>
+              <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Sem Leitor de Faturas Complexo</span>
+            </div>
+          </div>
+
+          <!-- Screen Preview Mockup -->
+          <div class="lg:col-span-6">
+            <div class="relative mx-auto rounded-2xl bg-slate-800 p-2 sm:p-3 ring-1 ring-white/20 shadow-2xl">
+              <div class="flex items-center justify-between pb-2 px-2 border-b border-slate-700 text-xs text-slate-400">
+                <div class="flex gap-1.5">
+                  <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                </div>
+                <span class="font-mono text-[10px]">Aninha PDV v1.0 - Caixa & Estoque</span>
+              </div>
+              <div class="rounded-lg overflow-hidden bg-white mt-2">
+                <!-- Visual mock mimicking the system screenshot -->
+                <div class="p-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center">
+                  <div>
+                    <h3 class="font-extrabold text-slate-800 text-lg">Aninha PDV</h3>
+                    <p class="text-xs text-slate-500">Caixa & Gestão de Estoque</p>
+                  </div>
+                  <span class="px-2 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded">Sessão Ativa</span>
+                </div>
+                <div class="p-4 grid grid-cols-2 gap-3 bg-white">
+                  <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-center">
+                    <p class="text-[10px] text-emerald-600 font-bold uppercase">Entradas no Dia</p>
+                    <p class="text-lg font-black text-emerald-700">R$ 1.250,00</p>
+                  </div>
+                  <div class="bg-red-50 border border-red-200 p-3 rounded-lg text-center">
+                    <p class="text-[10px] text-red-600 font-bold uppercase">Saídas no Dia</p>
+                    <p class="text-lg font-black text-red-700">R$ 120,00</p>
+                  </div>
+                </div>
+                <div class="p-4 bg-slate-100 border-t border-slate-200 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-800 text-white rounded-lg flex items-center justify-center">
+                      <i class="fa-solid fa-print text-emerald-400"></i>
+                    </div>
+                    <div>
+                      <p class="text-xs font-bold text-slate-800">Impressora Térmica Inclusa</p>
+                      <p class="text-[11px] text-slate-500">Impressão instantânea de cupons não fiscais</p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded border border-emerald-200">Pronto para Uso</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Tudo o que seu comércio precisa para vender mais</h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base">Projetado especialmente para padarias, mercearias, lanchonetes e comércio em geral.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-cash-register"></i>
+            </div>
+            <h3 class="font-bold text-lg text-slate-800 mb-2">Frente de Caixa Rápido</h3>
+            <p class="text-slate-600 text-sm">Registre produtos com código de barras ou busca rápida, selecione a forma de pagamento e feche a venda sem demora.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-qrcode"></i>
+            </div>
+            <h3 class="font-bold text-lg text-slate-800 mb-2">Chave PIX e QR Code</h3>
+            <p class="text-slate-600 text-sm">Exiba sua chave PIX direto na tela para agilizar o recebimento dos seus clientes sem erros de digitação.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+            <h3 class="font-bold text-lg text-slate-800 mb-2">Controle de Estoque Fácil</h3>
+            <p class="text-slate-600 text-sm">Cadastre produtos, altere quantidades com o botão "Repor", defina preços de venda e saiba exatamente o que tem na loja.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing / Rental Offer Section -->
+    <section id="planos" class="py-16 bg-slate-100 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full">Plano de Aluguel</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-3">Alugue o Kit Completo</h2>
+          <p class="text-slate-600 mt-2">Sem investimento alto em equipamentos. Comece a usar hoje mesmo.</p>
+        </div>
+
+        <div class="max-w-md mx-auto bg-white rounded-3xl shadow-xl border-2 border-emerald-500 overflow-hidden relative">
+          <div class="bg-emerald-500 text-white text-center py-2 text-xs font-bold tracking-wider uppercase">
+            Mais Vendido para Comércio Local
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-slate-800">Kit Aninha PDV</h3>
+            <p class="text-slate-500 text-xs mt-1">Software Completo + Impressora Térmica</p>
+
+            <div class="my-6">
+              <span class="text-xs text-slate-400 uppercase font-semibold">A partir de</span>
+              <div class="flex items-center justify-center gap-1 mt-1">
+                <span class="text-2xl font-extrabold text-slate-700">R$</span>
+                <span class="text-5xl font-black text-slate-900">Consulte</span>
+              </div>
+              <span class="text-xs text-emerald-600 font-medium">Aluguel mensal sem fidelidade abusiva</span>
+            </div>
+
+            <ul class="text-left space-y-3 text-sm text-slate-600 mb-8 border-t border-b border-slate-100 py-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Sistema de Frente de Caixa (PDV) completo</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Impressora Térmica de Cupom inclusa</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Módulo de Estoque e Reposição Rápida</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Suporte técnico e atualizações inclusas</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Treinamento inicial do operador</li>
+            </ul>
+
+            <a href="https://wa.me/5521982260442?text=Olá!%20Quero%20saber%20valores%20do%20aluguel%20do%20Aninha%20PDV%20com%20impressora." target="_blank" class="w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2 transition">
+              <i class="fa-brands fa-whatsapp text-xl"></i> Solicitar Orçamento no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- TAB 2: PROMOTIONAL BANNER GENERATOR (Post para Redes Sociais) -->
+  <section id="section-banner" class="hidden py-10 bg-slate-900 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-slate-800 p-4 rounded-xl text-white mb-6 border border-slate-700">
+        <h2 class="font-bold text-lg"><i class="fa-solid fa-camera mr-2 text-emerald-400"></i> Banner Promocional Pronto para Print</h2>
+        <p class="text-xs text-slate-400">Tire um print ou captura de tela do quadro abaixo para postar no Instagram, Facebook ou WhatsApp Status.</p>
+      </div>
+
+      <!-- BANNER FORMATO SOCIAIS (1080x1080 proporção aproximada visual) -->
+      <div class="bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 p-6 sm:p-10 rounded-3xl border-2 border-emerald-500/50 shadow-2xl relative overflow-hidden">
+        <!-- Decoration background -->
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-emerald-500/20 rounded-full blur-2xl"></div>
+
+        <!-- Banner Header -->
+        <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-emerald-500 text-white font-black text-2xl flex items-center justify-center rounded-2xl shadow-lg">
+              A
+            </div>
+            <div>
+              <h3 class="text-2xl font-black text-white tracking-tight">Aninha<span class="text-emerald-400">PDV</span></h3>
+              <p class="text-xs text-emerald-300 font-semibold uppercase tracking-wider">Gestão Comercial & Caixa Rápido</p>
+            </div>
+          </div>
+          <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-extrabold px-3 py-1.5 rounded-full uppercase">
+            Oferta de Aluguel
+          </span>
+        </div>
+
+        <!-- Main Banner Callout -->
+        <div class="my-6 text-center">
+          <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
+            ALUGUE O SISTEMA COMPLETO + <span class="text-emerald-400 underline decoration-emerald-500 decoration-4">IMPRESSORA TÉRMICA</span>
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base mt-2">Transforme seu comércio hoje mesmo sem gastar com equipamentos caros!</p>
+        </div>
+
+        <!-- System Screen Frame Simulation -->
+        <div class="bg-slate-800 p-2 rounded-xl border border-slate-700 shadow-xl my-6">
+          <div class="bg-white rounded-lg p-3 text-slate-800 font-sans">
+            <div class="flex justify-between items-center border-b pb-2 mb-2 text-xs font-bold text-slate-700">
+              <span><i class="fa-solid fa-desktop text-emerald-600 mr-1"></i> Aninha PDV - Caixa e Estoque</span>
+              <span class="text-emerald-600">PIX | DINHEIRO | CARTÃO</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-left text-xs mb-2">
+              <div class="bg-emerald-50 p-2 rounded border border-emerald-200">
+                <span class="text-[10px] text-emerald-600 font-bold">TOTAL ENTRADAS</span>
+                <p class="font-extrabold text-sm text-emerald-800">R$ 0,00</p>
+              </div>
+              <div class="bg-red-50 p-2 rounded border border-red-200">
+                <span class="text-[10px] text-red-600 font-bold">TOTAL SAÍDAS</span>
+                <p class="font-extrabold text-sm text-red-800">R$ 0,00</p>
+              </div>
+            </div>
+            <div class="bg-slate-100 p-2 rounded text-[11px] text-slate-600 flex justify-between items-center">
+              <span><i class="fa-solid fa-barcode text-slate-500 mr-1"></i> Cadastro & Reposição de Estoque Instantânea</span>
+              <span class="bg-emerald-600 text-white px-2 py-0.5 rounded text-[9px] font-bold">IMPRESSÃO PRONTA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features Bullets & CTA -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200 font-medium mb-6">
+          <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+            <span>Impressora Térmica Não Fiscal Inclusa</span>
+          </div>
+          <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+            <span>Controle Financeiro e Histórico</span>
+          </div>
+          <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+            <span>Chave PIX e Cálculo de Troco Automático</span>
+          </div>
+          <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+            <span>Suporte Técnico + Instalação</span>
+          </div>
+        </div>
+
+        <!-- Bottom CTA Bar -->
+        <div class="bg-emerald-500 rounded-2xl p-4 text-slate-950 flex flex-col sm:flex-row items-center justify-between gap-3 font-bold">
+          <div class="flex items-center gap-2 text-sm">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <span>Alugue sem complicação: <strong>(21) 98226-0442</strong></span>
+          </div>
+          <a href="https://wa.me/5521982260442?text=Olá!%20Vim%20pelo%20banner%20e%20quero%20alugar%20o%20Aninha%20PDV." target="_blank" class="bg-slate-950 hover:bg-slate-800 text-white px-4 py-2 rounded-xl text-xs uppercase font-extrabold tracking-wider transition">
+            Chame no Zap!
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+    <p>Aninha PDV &copy; - Todos os direitos reservados. Sistema de Caixa e Gestão de Estoque.</p>
+  </footer>
+
+  <script>
+    function switchTab(tab) {
+      document.getElementById('section-landing').classList.add('hidden');
+      document.getElementById('section-banner').classList.add('hidden');
+
+      document.getElementById('tab-landing').className = "px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition";
+      document.getElementById('tab-banner').className = "px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition";
+
+      if (tab === 'landing') {
+        document.getElementById('section-landing').classList.remove('hidden');
+        document.getElementById('tab-landing').className = "px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-lg bg-white shadow-sm text-emerald-700 transition";
+      } else if (tab === 'banner') {
+        document.getElementById('section-banner').classList.remove('hidden');
+        document.getElementById('tab-banner').className = "px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-semibold rounded-lg bg-white shadow-sm text-emerald-700 transition";
+      }
+    }
+  </script>
+</body>
+</html>
